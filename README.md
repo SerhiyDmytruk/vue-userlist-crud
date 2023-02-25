@@ -1,2 +1,12 @@
-# vue-userlist-crud
-Created with CodeSandbox
+# Simple CRUD
+
+- create
+- read
+- update
+- delete
+
+#todo
+
+- pagination
+- sorting
+- searching
