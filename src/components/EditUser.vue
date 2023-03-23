@@ -1,30 +1,41 @@
 <template>
-  <div v-if="post">
-    <a href="/">back to list</a>
-    <img
-      :src="post.avatar"
-      class="rounded-circle"
-      height="50px"
-      :data-post-id="post.id"
-      :alt="post.name"
-    />
+  <div v-if="post" class="container">
+    <a href="/" class="btn btn-outline-info mb-4">Back to list</a>
 
-    <form class="container">
-      <input
-        type="text"
-        name="name"
-        id="name"
-        placeholder="Name Surname"
-        v-model="post.name"
-      />
-      <input
-        type="number"
-        name="phone"
-        id="phone"
-        placeholder="123456789"
-        v-model="post.phone"
-      />
-      <button @click="editCustomer">Submit</button>
+    <form class="row align-items-start">
+      <div class="col-md-12 text-center">
+        <img
+          :src="post.avatar"
+          class="rounded-circle mb-3"
+          height="70px"
+          :data-post-id="post.id"
+          :alt="post.name"
+        />
+      </div>
+      <div class="mb-1 col-md-6">
+        <input
+          class="form-control"
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Name Surname"
+          v-model="post.name"
+        />
+      </div>
+
+      <div class="mb-1 col-md-6">
+        <input
+          class="form-control"
+          type="number"
+          name="phone"
+          id="phone"
+          placeholder="123456789"
+          v-model="post.phone"
+        />
+      </div>
+      <div class="col-md-12">
+        <button @click="editCustomer" class="w-100 btn btn-info">Submit</button>
+      </div>
     </form>
   </div>
 </template>
@@ -52,7 +63,7 @@ export default {
           `https://63e4e7f3c04baebbcdaec89e.mockapi.io/Phone-database/${this.$route.params.id}`,
           this.post
         )
-        .then((response) => {
+        .then(() => {
           this.$router.push("/");
         })
         .catch((error) => {
@@ -63,5 +74,4 @@ export default {
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

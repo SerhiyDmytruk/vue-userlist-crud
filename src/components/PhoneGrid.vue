@@ -1,11 +1,11 @@
 <template>
   <div class="container">
-    <input
+    <!-- <input
       type="text"
       v-model="searchNumber"
       placeholder="Search By Number"
       id="search-input"
-    />
+    /> -->
 
     <div class="row justify-content-md-center flex-row" v-if="usersData">
       <section
@@ -62,11 +62,6 @@ import { mapGetters } from "vuex";
 import DeleteUser from "./DeleteUser";
 
 export default {
-  data() {
-    return {
-      searchNumber: "",
-    };
-  },
   name: "PhoneGrid",
   components: {
     DeleteUser,
@@ -80,19 +75,18 @@ export default {
     searchNumber() {
       // Process search input
       if (this.searchValue != "" && this.searchValue) {
-        tempRecipes = tempRecipes.filter((item) => {
-          return item.title
-            .toUpperCase()
-            .includes(this.searchValue.toUpperCase());
-        });
+        // tempRecipes = tempRecipes.filter((item) => {
+        //   return item.title
+        //     .toUpperCase()
+        //     .includes(this.searchValue.toUpperCase());
+        // });
       }
     },
-    sortArrays(arrays) {
-      return _.orderBy(arrays, "name", "asc");
-    },
+    // sortArrays(arrays) {
+    //   return _.orderBy(arrays, "name", "asc");
+    // },
   },
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

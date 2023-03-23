@@ -1,22 +1,33 @@
 <template>
-  <form class="container">
-    <legend>Add new user</legend>
-    <input
-      type="text"
-      name="name"
-      id="name"
-      placeholder="Name Surname"
-      v-model="customer.name"
-    />
-    <input
-      type="number"
-      name="phone"
-      id="phone"
-      placeholder="123456789"
-      v-model="customer.phone"
-    />
-    <button @click="addNewCustomer">Submit</button>
-  </form>
+  <div class="container mb-5">
+    <form class="row justify-content-md-center flex-row flex-column">
+      <legend class="text-center">Add new user</legend>
+
+      <div class="mb-3">
+        <input
+          class="form-control"
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Name Surname"
+          v-model="customer.name"
+        />
+      </div>
+
+      <div class="mb-3">
+        <input
+          class="form-control"
+          type="number"
+          name="phone"
+          id="phone"
+          placeholder="Phone number"
+          v-model="customer.phone"
+        />
+      </div>
+
+      <button @click="addNewCustomer" class="btn btn-success">Submit</button>
+    </form>
+  </div>
 </template>
 <script>
 import axios from "axios";
