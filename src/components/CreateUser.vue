@@ -31,6 +31,7 @@
 </template>
 <script>
 import axios from "axios";
+import { mapGetters } from "vuex";
 
 export default {
   name: "CreateUser",
@@ -38,6 +39,11 @@ export default {
     return {
       customer: {},
     };
+  },
+  computed: {
+    ...mapGetters({
+      usersData: "block_data",
+    }),
   },
   methods: {
     addNewCustomer(e) {
@@ -50,7 +56,7 @@ export default {
         )
         .then((response) => {
           console.log(response.data);
-          this.$router.push("/");
+          this.computed();
         })
         .catch((error) => {
           console.log(error);
@@ -60,5 +66,4 @@ export default {
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

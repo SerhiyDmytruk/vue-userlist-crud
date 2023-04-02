@@ -36,8 +36,8 @@ export default {
         .delete(
           `https://63e4e7f3c04baebbcdaec89e.mockapi.io/Phone-database/${this.id}`
         )
+        .then(() => {})
         .catch((error) => {
-          this.$router.push("/");
           console.log(error);
         });
     },
@@ -45,5 +45,4 @@ export default {
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

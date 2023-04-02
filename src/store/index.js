@@ -6,7 +6,7 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
   state: {
-    users: []
+    users: [],
   },
   actions: {
     fetchData({ commit }) {
@@ -19,12 +19,12 @@ const store = new Vuex.Store({
         .catch((error) => {
           console.log(error);
         });
-    }
+    },
   },
   mutations: {
     FETCH_DATA(state, post) {
       state.users = post;
-    }
+    },
   },
   getters: {
     block_data(state) {
@@ -35,8 +35,8 @@ const store = new Vuex.Store({
       if (!id || !results) return false;
 
       return results;
-    }
-  }
+    },
+  },
 });
 
 export default store;
