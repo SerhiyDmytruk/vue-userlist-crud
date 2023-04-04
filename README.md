@@ -2,7 +2,6 @@
 
 - create
 - read
-- update
 - delete
 
 #todo
@@ -10,3 +9,4 @@
 - pagination
 - sorting
 - searching
+- update

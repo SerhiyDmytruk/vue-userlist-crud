@@ -4,7 +4,6 @@ import Vue from "vue";
 import App from "./App";
 import store from "./store";
 import * as filters from "./filters";
-import router from "./router";
 
 Vue.config.productionTip = true;
 Vue.config.performance = true;
@@ -18,6 +17,5 @@ Object.keys(filters).forEach((key) => {
 new Vue({
   el: "#app",
   store: store,
-  router: router,
   render: (h) => h(App),
 });

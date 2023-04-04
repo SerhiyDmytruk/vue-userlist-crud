@@ -1,24 +1,26 @@
 <template>
   <div id="app" ref="test">
-    <TitlePage title-name="Phone list" />
-    <router-view />
+    <AddUser />
+    <PhoneGrid />
   </div>
 </template>
 
 <script>
-import TitlePage from "@/components/TitlePage";
 import { mapActions } from "vuex";
+import PhoneGrid from "@/components/PhoneGrid";
+import AddUser from "@/components/AddUser";
 
 export default {
   name: "App",
   components: {
-    TitlePage,
+    PhoneGrid,
+    AddUser,
   },
   methods: {
-    ...mapActions(["fetchData"]),
+    ...mapActions(["fetchUsers"]),
   },
   created() {
-    this.fetchData();
+    this.fetchUsers();
   },
 };
 </script>
