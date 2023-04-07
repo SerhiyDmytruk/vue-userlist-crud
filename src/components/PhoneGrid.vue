@@ -81,7 +81,7 @@
         Back to list
       </button>
 
-      <form class="row align-items-start">
+      <form class="row align-items-start" @submit="onSubmit">
         <div class="col-md-12 text-center">
           <img
             :src="userData.avatar"
@@ -112,9 +112,7 @@
           />
         </div>
         <div class="col-md-12">
-          <button @click="updateUser(userData)" class="w-100 btn btn-info">
-            Submit
-          </button>
+          <button class="w-100 btn btn-info">Submit</button>
         </div>
       </form>
     </div>
@@ -140,6 +138,10 @@ export default {
     editUser(id) {
       this.userData = this.getUserById(id);
       return this.userData;
+    },
+    onSubmit(e) {
+      e.preventDefault();
+      this.updateUser(this.userData);
     },
   },
   created() {

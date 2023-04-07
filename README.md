@@ -3,6 +3,7 @@
 - create
 - read
 - delete
+- update
 
 #todo
 

@@ -6,7 +6,6 @@ const state = {
 const getters = {
   userList: (state) => state.users,
   getUserById: (state) => (id) => {
-    console.log(id);
     let results = state.users.find((item) => item.id === id);
     if (!id || !results) return false;
 
