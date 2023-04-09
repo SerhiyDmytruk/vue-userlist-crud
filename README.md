@@ -10,4 +10,3 @@
 - pagination
 - sorting
 - searching
-- update
