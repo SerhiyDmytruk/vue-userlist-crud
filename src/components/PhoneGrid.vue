@@ -9,6 +9,7 @@
           v-for="user in userList"
           :key="user.id"
           class="col-sm-8 card mb-2"
+          :class="[activeClass ? 'd-block' : 'd-none']"
         >
           <div class="row align-items-center">
             <div class="col-sm-2">
@@ -127,6 +128,7 @@ export default {
     return {
       userData: {},
       editMode: false,
+      activeClass: true,
     };
   },
   name: "PhoneGrid",
@@ -135,10 +137,12 @@ export default {
   },
   methods: {
     ...mapActions(["fetchUsers", "deleteUser", "updateUser"]),
+
     editUser(id) {
       this.userData = this.getUserById(id);
       return this.userData;
     },
+
     onSubmit(e) {
       e.preventDefault();
       this.updateUser(this.userData);

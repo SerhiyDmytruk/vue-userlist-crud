@@ -11,6 +11,17 @@ const getters = {
 
     return results;
   },
+  getUserByName: (state) => (name) => {
+    console.log(name, "getUserByName name");
+
+    if (name !== "") {
+      let results = state.users.filter((item) => {
+        return item.name.toLowerCase().includes(name.toLowerCase());
+      });
+
+      return (state.users = results);
+    }
+  },
 };
 const actions = {
   async fetchUsers({ commit }) {
@@ -64,10 +75,22 @@ const mutations = {
     }
   },
 };
+const computed = {
+  filteredResources: () => {
+    if (this.searchQuery) {
+      return this.userList.filter((item) => {
+        return item.title.startsWith(this.searchQuery);
+      });
+    } else {
+      return this.userList;
+    }
+  },
+};
 
 export default {
   state,
   getters,
   actions,
   mutations,
+  computed,
 };

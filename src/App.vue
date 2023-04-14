@@ -1,5 +1,6 @@
 <template>
   <div id="app" ref="test">
+    <SearchUser />
     <AddUser />
     <PhoneGrid />
   </div>
@@ -9,12 +10,14 @@
 import { mapActions } from "vuex";
 import PhoneGrid from "@/components/PhoneGrid";
 import AddUser from "@/components/AddUser";
+import SearchUser from "@/components/SearchUser";
 
 export default {
   name: "App",
   components: {
     PhoneGrid,
     AddUser,
+    SearchUser,
   },
   methods: {
     ...mapActions(["fetchUsers"]),

@@ -17,5 +17,6 @@ Object.keys(filters).forEach((key) => {
 new Vue({
   el: "#app",
   store: store,
+  search: "",
   render: (h) => h(App),
 });
