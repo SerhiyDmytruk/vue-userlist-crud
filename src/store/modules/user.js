@@ -2,6 +2,7 @@ import axios from "axios";
 
 const state = {
   users: [],
+  inputValue: "",
 };
 const getters = {
   userList: (state) => state.users,
@@ -11,16 +12,14 @@ const getters = {
 
     return results;
   },
-  getUserByName: (state) => (name) => {
-    console.log(name, "getUserByName name");
+  getUserByName: (state) => (inputValue) => {
+    console.log(state, inputValue, "getUserByName name");
 
-    if (name !== "") {
-      let results = state.users.filter((item) => {
-        return item.name.toLowerCase().includes(name.toLowerCase());
-      });
+    let results = state.users.filter((item) => {
+      return item.name.toLowerCase().includes(inputValue.toLowerCase());
+    });
 
-      return (state.users = results);
-    }
+    console.log(results);
   },
 };
 const actions = {
@@ -77,13 +76,10 @@ const mutations = {
 };
 const computed = {
   filteredResources: () => {
-    if (this.searchQuery) {
-      return this.userList.filter((item) => {
-        return item.title.startsWith(this.searchQuery);
-      });
-    } else {
-      return this.userList;
-    }
+    console.log(state.users);
+    //   return state.users.filter((item) => {
+    //     return item.name.toLowerCase().includes(this.search.toLowerCase());
+    //   });
   },
 };
 
