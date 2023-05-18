@@ -3,10 +3,10 @@
     <div class="container">
       <div
         class="row justify-content-md-center flex-row"
-        v-if="!editMode && userList"
+        v-if="!editMode && getUserList"
       >
         <section
-          v-for="user in userList"
+          v-for="user in getUserList"
           :key="user.id"
           class="col-sm-8 card mb-2"
           :class="[activeClass ? 'd-block' : 'd-none']"
@@ -133,7 +133,7 @@ export default {
   },
   name: "PhoneGrid",
   computed: {
-    ...mapGetters(["userList", "getUserById"]),
+    ...mapGetters(["getUserList", "getUserById"]),
   },
   methods: {
     ...mapActions(["fetchUsers", "deleteUser", "updateUser"]),

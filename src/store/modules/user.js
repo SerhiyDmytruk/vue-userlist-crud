@@ -2,24 +2,26 @@ import axios from "axios";
 
 const state = {
   users: [],
-  inputValue: "",
+  searchUserInput: ""
 };
 const getters = {
   userList: (state) => state.users,
+  getUserList: (state) => {
+      return state.users.filter(user => {
+        return user.name.toLowerCase().includes(state.searchUserInput.toLowerCase())
+        }
+      )
+  },
   getUserById: (state) => (id) => {
     let results = state.users.find((item) => item.id === id);
     if (!id || !results) return false;
 
     return results;
   },
-  getUserByName: (state) => (inputValue) => {
-    console.log(state, inputValue, "getUserByName name");
+  getUserByName: (state) => (searchUserInput) => {
+     state.searchUserInput = searchUserInput;
 
-    let results = state.users.filter((item) => {
-      return item.name.toLowerCase().includes(inputValue.toLowerCase());
-    });
-
-    console.log(results);
+    return
   },
 };
 const actions = {
@@ -74,19 +76,10 @@ const mutations = {
     }
   },
 };
-const computed = {
-  filteredResources: () => {
-    console.log(state.users);
-    //   return state.users.filter((item) => {
-    //     return item.name.toLowerCase().includes(this.search.toLowerCase());
-    //   });
-  },
-};
 
 export default {
   state,
   getters,
   actions,
   mutations,
-  computed,
 };

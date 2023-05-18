@@ -1,5 +1,5 @@
 <template>
-  <div id="app" ref="test">
+  <div id="app" ref="app">
     <SearchUser />
     <AddUser />
     <PhoneGrid />

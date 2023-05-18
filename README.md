@@ -1,12 +1,12 @@
-# Simple CRUD
+# Simple CRUD based on VueJs
 
-- create
+Already implemented based things:
+- create/add
 - read
 - delete
 - update
+- searching
 
 #todo
-
 - pagination
 - sorting
-- searching
