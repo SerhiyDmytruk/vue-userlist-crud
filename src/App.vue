@@ -3,6 +3,12 @@
     <SearchUser />
     <AddUser />
     <PhoneGrid />
+    <Paginatiion 
+    :total-pages="11"
+    :total="113"
+    :per-page="10"
+    :current-page="currentPage"
+    @pagechanged="onPageChange"/>
   </div>
 </template>
 
@@ -11,6 +17,7 @@ import { mapActions } from "vuex";
 import PhoneGrid from "@/components/PhoneGrid";
 import AddUser from "@/components/AddUser";
 import SearchUser from "@/components/SearchUser";
+import Paginatiion from './components/Paginatiion.vue';
 
 export default {
   name: "App",
@@ -18,7 +25,8 @@ export default {
     PhoneGrid,
     AddUser,
     SearchUser,
-  },
+    Paginatiion,
+},
   methods: {
     ...mapActions(["fetchUsers"]),
   },

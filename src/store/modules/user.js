@@ -36,7 +36,6 @@ const actions = {
       });
   },
   async addUser({ commit }, user) {
-    console.log(user);
     const response = await axios.post(
       "https://63e4e7f3c04baebbcdaec89e.mockapi.io/Phone-database",
       user
